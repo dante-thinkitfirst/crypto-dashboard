@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import CoinCard from "./components/CoinCard";
 //API URL for the coins data.
 const API_URL =
   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false";
@@ -29,7 +30,21 @@ const App = () => {
     fetchCoins();
   }, []);
 
-  return <h1>🚀 Crypto Dashboard</h1>;
+  return (
+    <div>
+      <h1>🚀 Crypto Dashboard</h1>
+      {loading && <p>Loading...</p>}
+      {error && <div className="error">Error: {error}</div>}
+
+      {!loading && !error && (
+        <main className="grid">
+          {coins.map((coin) => (
+            <CoinCard key={coin.id} coin={coin} />
+          ))}
+        </main>
+      )}
+    </div>
+  );
 };
 
 export default App;
