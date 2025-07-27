@@ -12,24 +12,24 @@ const App = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(API_URL)
-      .then((response) => {
+    const fetchCoins = async () => {
+      try {
+        const response = await fetch(API_URL);
         if (!response.ok) throw new Error("Network response was not ok");
-        return response.json();
-      })
-      .then((data) => {
-        //we will see the data twice in the console.log because of how strict mode works in react
+        const data = await response.json();
         console.log(data);
+        //set the coins state to the data
         setCoins(data);
-        setLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         setError(error.message);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+    fetchCoins();
   }, []);
 
-  return <h1>🚀 Crypto Dash</h1>;
+  return <h1>🚀 Crypto Dashboard</h1>;
 };
 
 export default App;
