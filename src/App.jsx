@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CoinCard from "./components/CoinCard";
 import LimitSelector from "./components/LimitSelector";
+import FilterInput from "./components/FilterInput";
 //API URL for the coins data.
 const API_URL = import.meta.env.VITE_API_URL;
 // "&order=market_cap_desc&per_page=10&page=1&sparkline=false"
@@ -14,6 +15,8 @@ const App = () => {
   const [error, setError] = useState(null);
   //State variable to store the limit of coins to fetch.
   const [limit, setLimit] = useState(10);
+  //State variable to store the filter value.
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -35,17 +38,29 @@ const App = () => {
     fetchCoins();
   }, [limit]);
 
+  const filteredCoins = coins.filter((coin) => {
+    return (
+      coin.name.toLowerCase().includes(filter.toLowerCase()) ||
+      coin.symbol.toLowerCase().includes(filter.toLowerCase())
+    );
+  });
+
   return (
     <div>
       <h1>🚀 Crypto Dashboard</h1>
       {loading && <p>Loading...</p>}
       {error && <div className="error">Error: {error}</div>}
-      <LimitSelector limit={limit} onLimitChange={setLimit} />
+      <div className="top-controls">
+        <FilterInput filter={filter} onFilterChange={setFilter} />
+        <LimitSelector limit={limit} onLimitChange={setLimit} />
+      </div>
       {!loading && !error && (
         <main className="grid">
-          {coins.map((coin) => (
-            <CoinCard key={coin.id} coin={coin} />
-          ))}
+          {filteredCoins.length > 0 ? (
+            filteredCoins.map((coin) => <CoinCard key={coin.id} coin={coin} />)
+          ) : (
+            <p>No coins found matching your search</p>
+          )}
         </main>
       )}
     </div>
