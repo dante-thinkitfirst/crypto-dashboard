@@ -29,6 +29,11 @@ This project is part of my personal portfolio and highlights frontend developmen
 
 ---
 
+## 🌐 Live Demo
+🔗 **[Click here to view the live app](https://crypto-dashboard-omega-seven.vercel.app/)**
+
+---
+
 ## 📦 Installation
 
 ```bash
@@ -43,3 +48,4 @@ npm install
 
 # Run development server
 npm run dev
+
