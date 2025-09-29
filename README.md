@@ -14,7 +14,6 @@ This project is part of my personal portfolio and highlights frontend developmen
 ## 🚀 Features
 - Real-time crypto market data (via CoinGecko API)
 - Interactive charts (candlestick & line)
-- Dark mode toggle
 - Responsive design with Tailwind CSS
 - Fast builds & HMR via Vite
 
