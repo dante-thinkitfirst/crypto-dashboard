@@ -1,12 +1,46 @@
-# React + Vite
+# Crypto Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-Currently, two official plugins are available:
+A responsive cryptocurrency dashboard built with **React** and **Vite**, showcasing live market data, interactive charts, and a modern UI.  
+This project is part of my personal portfolio and highlights frontend development, API integration, and data visualization skills.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
+- Real-time crypto market data (via CoinGecko API)
+- Interactive charts (candlestick & line)
+- Dark mode toggle
+- Responsive design with Tailwind CSS
+- Fast builds & HMR via Vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+- **React (Hooks, Components, Custom Hooks)**
+- **Vite** (lightweight bundler with fast HMR)
+- **Tailwind CSS** (utility-first styling)
+- **Chart.js / Recharts** (data visualization)
+- **CoinGecko API** (live crypto market data)
+- **Vercel** (deployment)
+
+---
+
+## 📦 Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/dante-thinkitfirst/crypto-dashboard.git
+
+# Move into directory
+cd crypto-dashboard
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
